@@ -9,9 +9,12 @@ export default createGlobalStyle `
 }
 
 
-li {
-    text-decoration: none;
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
   }
+  
 `
 
 

@@ -14,34 +14,24 @@ import {
   DivButton,
   DivUsers,
   CustomerOrder,
-  CustomerName
+  CustomerName,
 } from "./styles";
 
 const App = () => {
-  const [orders, setUsers] = useState([]);
-  const inputOrder = useRef();
-  const inputClientName = useRef();
+  const [orders, setOrders] = useState([]);
+  const [order, setOrder] = useState();
+  const [name, setName] = useState();
 
-  async function newOrder() {
-    console.log(orders);
-    const { data: newOrder } = await axios.post("http://localhost:3001/users", {
-      order: inputOrder.current.value,
-      clientName: inputClientName.current.value,
-    });
-    setUsers([...orders, ...newOrder]);
+  function newOrder() {
+    setOrders([{id: Math.random(), clientOrder: order, clientName: name}])
   }
-  const users = [
-    {
-      id: Math.random(),
-      name: "Barbecue bacon burger",
-      age: 24,
-    },
-    {
-      id: Math.random(),
-      name: "BigMac EExplosao cheddar alface cru",
-      age: 27,
-    },
-  ];
+  
+  function firstInputOrder(event) {
+    setOrder(event.target.value);
+  }
+  function secondInputOrder(event) {
+    setName(event.target.value);
+  }
 
   return (
     <Container>
@@ -49,18 +39,21 @@ const App = () => {
       <H1>Faça seu pedido!</H1>
       <ContainerItens>
         <InputLabel>Pedido</InputLabel>
-        <Input placeholder="1 Coca-Cola, 1-X Salada" ref={inputOrder}></Input>
+        <Input
+          placeholder="1 Coca-Cola, 1-X Salada"
+          onChange={firstInputOrder}
+        ></Input>
         <InputLabel>Nome do Cliente</InputLabel>
-        <Input placeholder="Steve Jobs" ref={inputClientName}></Input>
+        <Input placeholder="Steve Jobs" onChange={secondInputOrder}></Input>
         <Button onClick={newOrder}>Novo Pedido</Button>
 
         <ul>
-          {users.map((user) => (
-            <li key={user.id}>
+          {orders.map((order) => (
+            <li key={order.id}>
               <DivUsers>
                 <User>
-                  <CustomerOrder>{user.name}</CustomerOrder>
-                  <CustomerName>{user.age}</CustomerName>
+                  <CustomerOrder>{order.clientOrder}</CustomerOrder>
+                  <CustomerName>{order.clientName}</CustomerName>
                 </User>
                 <DivButton>
                   <button>
