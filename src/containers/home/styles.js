@@ -6,7 +6,8 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 40px;
-  width: 100vw;
+  height: 100vh;
+  
 `;
 export const Img = styled.img`
   margin-bottom: 25px;
@@ -73,7 +74,8 @@ export const Button = styled.button`
   font-size: 17px;
   font-style: normal;
   font-weight: 900;
-  line-height: 2.5px; /* 14.706% */
+  line-height: 2.5px;
+  margin-top: 30px;
 
   &:hover {
     opacity: 0.8;
