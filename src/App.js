@@ -19,20 +19,24 @@ import {
 
 const App = () => {
   const [orders, setOrders] = useState([]);
-  const [order, setOrder] = useState();
-  const [name, setName] = useState();
+  const inputOrder = useRef()
+  const inputClientName = useRef()
 
-  function newOrder() {
-    setOrders([{id: Math.random(), clientOrder: order, clientName: name}])
+
+  async function newOrder() {
+     setOrders([...orders,{id: Math.random(), clientOrder: inputOrder.current.value, clientName: inputClientName.current.value}])
+      const newOrderData  = {
+        order: inputOrder.current.value,
+        clientName: inputClientName.current.value
+      }
+     const data = await axios.post('http://localhost:3001/orders',newOrderData)
   }
   
-  function firstInputOrder(event) {
-    setOrder(event.target.value);
-  }
-  function secondInputOrder(event) {
-    setName(event.target.value);
-  }
+function deleteOrder(orderID) {
+  const newArrayOrders = orders.filter((order) => order.id !== orderID);
 
+  setOrders(newArrayOrders)
+}
   return (
     <Container>
       <Img alt="burger-logo" src={BurgerIMG} />
@@ -41,10 +45,10 @@ const App = () => {
         <InputLabel>Pedido</InputLabel>
         <Input
           placeholder="1 Coca-Cola, 1-X Salada"
-          onChange={firstInputOrder}
+          ref={inputOrder}
         ></Input>
         <InputLabel>Nome do Cliente</InputLabel>
-        <Input placeholder="Steve Jobs" onChange={secondInputOrder}></Input>
+        <Input placeholder="Steve Jobs" ref={inputClientName}></Input>
         <Button onClick={newOrder}>Novo Pedido</Button>
 
         <ul>
@@ -56,7 +60,7 @@ const App = () => {
                   <CustomerName>{order.clientName}</CustomerName>
                 </User>
                 <DivButton>
-                  <button>
+                  <button onClick={() => deleteOrder(order.id)}>
                     <img alt="trash-icon" src={Trash} />
                   </button>
                 </DivButton>
