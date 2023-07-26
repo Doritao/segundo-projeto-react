@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import {Link} from 'react-router-dom';
 export const Container = styled.div`
   background-color: #0a0a10;
   display: flex;
@@ -59,18 +59,15 @@ export const Input = styled.input`
   line-height: normal;
 `;
 
-export const Button = styled.button`
+export const Button = styled(Link)`
   background: #d93856;
-
+  text-decoration: none;
   width: 342px;
-  height: 68px;
-  padding: 0px 113px;
+  text-align: center;
+  padding: 34px 113px;
   border: none;
   cursor: pointer;
-
   color: #fff;
-  text-align: center;
-
   font-size: 17px;
   font-style: normal;
   font-weight: 900;

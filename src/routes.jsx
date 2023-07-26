@@ -4,8 +4,11 @@ import Home from "./containers/home"
 import Orders from './containers/orders'
 function Routes() {
   return <Router>
-        <Route path="/" component={Home}/>
-        <Route path="/orders" component={Orders}/>
+    <Switch>
+    <Route exact path="/" component={Home} />
+        <Route exact path="/orders" component={Orders} />
+    </Switch>
+
   </Router>;
 }
 

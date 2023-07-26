@@ -66,7 +66,7 @@ const App = () => {
             </li>
           ))}
         </ul>
-        <Button onClick={teste}>Voltar</Button>
+        <Button to='/'>Voltar</Button>
       </ContainerItens>
     </Container>
   );

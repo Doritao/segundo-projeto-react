@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 export const Container = styled.div`
   background-color: #0a0a10;
   display: flex;
@@ -27,26 +27,23 @@ export const ContainerItens = styled.div`
   flex-direction: column;
 `;
 
-
-
-
-export const Button = styled.button`
+export const Button = styled(Link)`
   background: rgba(255, 255, 255, 0.14);
 
+  background: #d93856;
+
+  text-decoration: none;
   width: 342px;
-  height: 68px;
-  padding: 0px 113px;
-  border: none;
-  margin-top: 30px;
-  cursor: pointer;
-
-  color: #fff;
   text-align: center;
-
+  padding: 34px 113px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
   font-size: 17px;
   font-style: normal;
   font-weight: 900;
-  line-height: 2.5px; /* 14.706% */
+  line-height: 2.5px;
+  margin-top: 30px;
 
   &:hover {
     opacity: 0.8;
@@ -76,7 +73,6 @@ export const DivUsers = styled.div`
 export const User = styled.div`
   line-height: 25px;
 
-
   color: #fff;
   font-family: Roboto;
   font-size: 17px;
@@ -94,22 +90,20 @@ export const DivButton = styled.div`
 `;
 
 export const CustomerOrder = styled.p`
-margin-bottom: 16px;
-color: #FFF;
-font-family: Roboto;
-font-size: 18px;
-font-style: normal;
-font-weight: 300;
-line-height: normal;
-`
+  margin-bottom: 16px;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+`;
 
 export const CustomerName = styled.p`
-color: #FFF;
-font-family: Roboto;
-font-size: 18px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-`
-
-
+  color: #fff;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+`;

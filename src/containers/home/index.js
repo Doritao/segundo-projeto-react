@@ -1,6 +1,7 @@
 import React, { useState, useRef} from "react";
 import axios from "axios";
 import BurgerIMG from "../../Assets/burger 1.svg";
+
 import {
   Container,
   Img,
@@ -37,7 +38,7 @@ const App = () => {
         <Input placeholder="1 Coca-Cola, 1-X Salada" ref={inputOrder}></Input>
         <InputLabel>Nome do Cliente</InputLabel>
         <Input placeholder="Steve Jobs" ref={inputClientName}></Input>
-        <Button onClick={newOrder}>Novo Pedido</Button>
+        <Button onClick={newOrder} to="/orders">Novo Pedido</Button>
       </ContainerItens>
     </Container>
   );
