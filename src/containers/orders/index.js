@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import BurgerIMG from "../../Assets/burger-package.svg";
 import Trash from "../../Assets/trash.svg";
+import { useHistory } from "react-router-dom"
 import {
   Container,
   Img,
@@ -17,7 +18,7 @@ import {
 
 const App = () => {
   const [orders, setOrders] = useState([]);
-
+  const history = useHistory()
   useEffect(() => {
     async function fetchOrders() {
       const { data: newORderData } = await axios.get(
@@ -31,12 +32,10 @@ const App = () => {
   //quando a pagina carregar
   //quando o estado orders for alterado
 
+function gobackPage() {
+  history.goBack();
+}
 
-  async function teste() {
-    orders.map((order) => {
-      console.log(order.clientName + "    " + order.clientOrder)
-    })
-  }
 
 
   async function deleteOrder(orderID) {
@@ -66,7 +65,7 @@ const App = () => {
             </li>
           ))}
         </ul>
-        <Button to='/'>Voltar</Button>
+        <Button onClick={gobackPage}>Voltar</Button>
       </ContainerItens>
     </Container>
   );

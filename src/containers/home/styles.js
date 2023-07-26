@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {Link} from 'react-router-dom';
 export const Container = styled.div`
   background-color: #0a0a10;
   display: flex;
@@ -59,7 +58,7 @@ export const Input = styled.input`
   line-height: normal;
 `;
 
-export const Button = styled(Link)`
+export const Button = styled.button`
   background: #d93856;
   text-decoration: none;
   width: 342px;
