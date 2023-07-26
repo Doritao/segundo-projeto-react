@@ -4,10 +4,7 @@ import BurgerIMG from "../../Assets/burger-package.svg";
 import Trash from "../../Assets/trash.svg";
 import { useHistory } from "react-router-dom"
 import {
-  Container,
   Img,
-  H1,
-  ContainerItens,
   Button,
   User,
   DivButton,
@@ -15,7 +12,9 @@ import {
   CustomerOrder,
   CustomerName,
 } from "./styles";
-
+import H1 from '../../components/Title'
+import Container from "../../components/Container"
+import ContainerItens from '../../components/ContainerItens'
 const App = () => {
   const [orders, setOrders] = useState([]);
   const history = useHistory()

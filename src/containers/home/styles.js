@@ -1,32 +1,10 @@
 import styled from "styled-components";
-export const Container = styled.div`
-  background-color: #0a0a10;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  height: 100vh;
-  
-`;
+
 export const Img = styled.img`
   margin-bottom: 25px;
 `;
 
-export const H1 = styled.h1`
-  margin-bottom: 23px;
-  color: #fff;
-  text-align: center;
 
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-`;
-
-export const ContainerItens = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
 
 export const InputLabel = styled.p`
   margin-bottom: 12px;

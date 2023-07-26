@@ -1,23 +1,12 @@
 import styled from "styled-components";
-export const Container = styled.div`
-  background-color: #0a0a10;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  height: 100%;
-  min-height: 100vh;
-`;
+
 export const Img = styled.img`
   margin-bottom: 25px;
 `;
 
 
 
-export const ContainerItens = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
+
 
 export const Button = styled.button`
   background: rgba(255, 255, 255, 0.14);
