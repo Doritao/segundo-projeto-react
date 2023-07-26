@@ -19,7 +19,7 @@ const App = () => {
 
   async function newOrder() {
     const { data: newOrderData } = await axios.post("http://localhost:3001/orders", {
-      order: inputOrder.current.value,
+      clientOrder: inputOrder.current.value,
       clientName: inputClientName.current.value,
     });
     setOrders((oldState) => [...oldState, newOrderData]);
