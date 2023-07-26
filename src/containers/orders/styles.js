@@ -12,15 +12,7 @@ export const Img = styled.img`
   margin-bottom: 25px;
 `;
 
-export const H1 = styled.h1`
-  color: #fff;
-  text-align: center;
 
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-`;
 
 export const ContainerItens = styled.div`
   display: flex;
