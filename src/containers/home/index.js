@@ -5,10 +5,9 @@ import { useHistory } from "react-router-dom"
 import {
   Img,
   InputLabel,
-  Input,
-  Button
+  Input
 } from "./styles";
-
+import Button from '../../components/Button'
 import H1 from '../../components/Title'
 import Container from "../../components/Container"
 import ContainerItens from '../../components/ContainerItens'

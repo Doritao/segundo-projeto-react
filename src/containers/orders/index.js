@@ -5,13 +5,14 @@ import Trash from "../../Assets/trash.svg";
 import { useHistory } from "react-router-dom"
 import {
   Img,
-  Button,
   User,
   DivButton,
   DivUsers,
   CustomerOrder,
   CustomerName,
 } from "./styles";
+
+import Button from '../../components/Button'
 import H1 from '../../components/Title'
 import Container from "../../components/Container"
 import ContainerItens from '../../components/ContainerItens'
@@ -64,7 +65,7 @@ function gobackPage() {
             </li>
           ))}
         </ul>
-        <Button onClick={gobackPage}>Voltar</Button>
+        <Button onClick={gobackPage} isBlack={true}>Voltar</Button>
       </ContainerItens>
     </Container>
   );
