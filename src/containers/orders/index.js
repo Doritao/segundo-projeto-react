@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import BurgerIMG from "../../Assets/burger-package.svg";
 import Trash from "../../Assets/trash.svg";
-import { useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom";
 import {
   Img,
   User,
@@ -12,13 +12,13 @@ import {
   CustomerName,
 } from "./styles";
 
-import Button from '../../components/Button'
-import H1 from '../../components/Title'
-import Container from "../../components/Container"
-import ContainerItens from '../../components/ContainerItens'
+import Button from "../../components/Button";
+import H1 from "../../components/Title";
+import Container from "../../components/Container";
+import ContainerItens from "../../components/ContainerItens";
 const App = () => {
   const [orders, setOrders] = useState([]);
-  const history = useHistory()
+  const history = useHistory();
   useEffect(() => {
     async function fetchOrders() {
       const { data: newORderData } = await axios.get(
@@ -32,11 +32,9 @@ const App = () => {
   //quando a pagina carregar
   //quando o estado orders for alterado
 
-function gobackPage() {
-  history.goBack();
-}
-
-
+  function gobackPage() {
+    history.goBack();
+  }
 
   async function deleteOrder(orderID) {
     const newArrayOrders = orders.filter((order) => order.id !== orderID);
@@ -65,7 +63,9 @@ function gobackPage() {
             </li>
           ))}
         </ul>
-        <Button onClick={gobackPage} isBlack={true}>Voltar</Button>
+        <Button onClick={gobackPage} isBlack={true}>
+          Voltar
+        </Button>
       </ContainerItens>
     </Container>
   );
